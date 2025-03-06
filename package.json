@@ -1,7 +1,6 @@
 {
   "name": "wportfolio",
   "homepage":"https://eezlogicxarvind.github.io/FirstPORTFOLIO",
-  // "homepage":"https://github.com/eezlogicxarvind/FirstPORTFOLIO.git",
 
   "private": true,
   "version": "0.0.0",
@@ -11,7 +10,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy":"npm run built",
+"predeploy": "npm run build",
     "deploy":"gh-pages -d dist"
   },
   "dependencies": {
