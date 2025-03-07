@@ -8,6 +8,9 @@ export const Contact = () => {
     email: "",
     message: "",
   });
+  // const SERVICE_ID=""
+  // const TEMPLATE_ID=""
+  // const PUBLIC_KEY=""
 
   const handleSubmit = (e) => {
     e.preventDefault();
