@@ -15,18 +15,23 @@ function App() {
 
   return (
     <>
-      {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}{" "}
+      {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
       <div
         className={`min-h-screen transition-opacity duration-700 ${
           isLoaded ? "opacity-100" : "opacity-0"
-        } bg-black text-gray-100`}
+        } bg-gradient-to-br from-black via-gray-900 to-blue-950 text-gray-100`}
       >
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <Home />
-        <About />
-        <Projects />
-        <Contact />
+        <main className="pt-20 max-w-5xl mx-auto px-4">
+          <Home />
+          <About />
+          <Projects />
+          <Contact />
+        </main>
+        <footer className="text-center py-8 text-gray-500 text-sm border-t border-white/10 mt-12">
+          &copy; {new Date().getFullYear()} pedro<span className="text-blue-500">.tech</span> &mdash; All rights reserved.
+        </footer>
       </div>
     </>
   );
