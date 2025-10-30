@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { ChevronDown, Github, Linkedin, Mail, ArrowRight, MousePointer } from "lucide-react";
-// Import profile photo from assets
+// Import profile photo and resume from assets
 import profilePhoto from '../../assets/Images/arvind-photo.jpg';
+import resumePDF from '../../assets/Images/resume.pdf';
 
 const Home = () => {
   const [currentRole, setCurrentRole] = useState(0);
@@ -130,7 +131,7 @@ const Home = () => {
         }`}>
           <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
             MERN Stack & React Native developer with hands-on experience building real applications. 
-            From DevTinder to Financial Literacy apps - I craft digital solutions that matter.
+            From DevConnect to Financial Literacy apps - I craft digital solutions that matter.
           </p>
         </div>
         
@@ -158,10 +159,11 @@ const Home = () => {
               <span>Let's Connect</span>
             </span>
           </button>
+          
           <a
-            href="/resume.pdf"
+            href={resumePDF}
             download="Arvind_Singh_Resume.pdf"
-            className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300"
           >
             <span>Download Resume</span>
           </a>

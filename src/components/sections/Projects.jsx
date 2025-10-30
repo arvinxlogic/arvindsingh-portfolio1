@@ -128,9 +128,9 @@ const Projects = () => {
     {
       id: 4,
       title: "TaskMaster",
-      description: "Offline-first expense tracker with Google OAuth, analytics, and budget management built with Firebase.",
-      longDescription: "Feature-rich React Native app with AsyncStorage for local persistence, Firebase Auth integration, and interactive charts for daily analytics. Implements Material Design with custom theming, category-based expense tracking, and smart budget recommendations.",
-      technologies: ["React Native", "Firebase", "AsyncStorage", "Charts"],
+      description: "Built mobile app with todo management, notes, and analytics dashboard tracking daily/weekly task trends.",
+      longDescription: "Feature-rich React Native app with AsyncStorage for local persistence and interactive charts for daily analytics..",
+      technologies: ["React Native",  "AsyncStorage", "Charts"],
       image: mobileAppImg,
       platforms: ["Mobile"],
       status: "Completed",

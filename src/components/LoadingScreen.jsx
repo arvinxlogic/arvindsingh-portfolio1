@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import profilePhoto from '../assets/Images/arvind-photo.jpg';
+
 
 // LoadingScreen Component
 const LoadingScreen = ({ onComplete }) => {
@@ -6,6 +8,7 @@ const LoadingScreen = ({ onComplete }) => {
   const [text, setText] = useState("");
   const [dots, setDots] = useState("");
   const fullText = "Initializing Portfolio Experience";
+
 
   useEffect(() => {
     // Animate progress bar
@@ -20,6 +23,7 @@ const LoadingScreen = ({ onComplete }) => {
       });
     }, 80);
 
+
     // Animate typing text
     let textIndex = 0;
     const textInterval = setInterval(() => {
@@ -30,6 +34,7 @@ const LoadingScreen = ({ onComplete }) => {
       }
     }, 100);
 
+
     // Animate loading dots
     const dotsInterval = setInterval(() => {
       setDots(prev => {
@@ -38,12 +43,14 @@ const LoadingScreen = ({ onComplete }) => {
       });
     }, 500);
 
+
     return () => {
       clearInterval(progressInterval);
       clearInterval(textInterval);
       clearInterval(dotsInterval);
     };
   }, [onComplete]);
+
 
   return (
     <div className="fixed inset-0 z-50 bg-black flex flex-col items-center justify-center">
@@ -63,10 +70,14 @@ const LoadingScreen = ({ onComplete }) => {
       </div>
       
       <div className="text-center z-10 max-w-lg mx-auto px-6">
-        {/* Logo/Brand */}
+        {/* Logo/Brand - BIGGER PROFESSIONAL PHOTO */}
         <div className="mb-12">
-          <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 via-sky-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-2xl shadow-blue-500/30 animate-pulse">
-            <span className="text-2xl font-bold text-white">A</span>
+          <div className="w-32 h-32 md:w-36 md:h-36 mx-auto mb-6 rounded-full overflow-hidden shadow-2xl shadow-blue-500/30 animate-pulse border-4 border-blue-500/50">
+            <img 
+              src={profilePhoto}
+              alt="Arvind Singh"
+              className="w-full h-full object-cover"
+            />
           </div>
           
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
@@ -102,6 +113,7 @@ const LoadingScreen = ({ onComplete }) => {
           Please wait{dots}
         </div>
       </div>
+
 
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-[0.02]"

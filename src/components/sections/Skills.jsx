@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import { Code, Database, Globe, Smartphone, Server, Shield, Brain, Zap } from "lucide-react";
 
+
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(0);
   const sectionRef = useRef(null);
+
 
   const skillCategories = [
     {
@@ -13,12 +15,12 @@ const Skills = () => {
       icon: Globe,
       color: "from-blue-400 to-cyan-400",
       skills: [
-        { name: "React", proficiency: "Advanced", experience: "2+ years", description: "Component architecture, hooks, Context API, Router, performance optimization" },
-        { name: "JavaScript ES6+", proficiency: "Advanced", experience: "2+ years", description: "Modern JS features, async patterns, functional programming, best practices" },
-        { name: "HTML5/CSS3", proficiency: "Advanced", experience: "2+ years", description: "Semantic markup, responsive design, animations, modern CSS features" },
-        { name: "Tailwind CSS", proficiency: "Advanced", experience: "1+ years", description: "Utility-first styling, responsive design, custom components" },
-        { name: "Bootstrap", proficiency: "Proficient", experience: "1+ years", description: "Grid system, components, responsive utilities, customization" },
-        { name: "TypeScript", proficiency: "Beginner", experience: "6 months", description: "Type safety, interfaces, basic type definitions and usage" },
+        { name: "React", proficiency: "Advanced", experience: "", description: "Component architecture, hooks, Context API, Router, performance optimization" },
+        { name: "JavaScript ES6+", proficiency: "Advanced", experience: "", description: "Modern JS features, async patterns, functional programming, best practices" },
+        { name: "HTML5/CSS3", proficiency: "Advanced", experience: "", description: "Semantic markup, responsive design, animations, modern CSS features" },
+        { name: "Tailwind CSS", proficiency: "Advanced", experience: "", description: "Utility-first styling, responsive design, custom components" },
+        { name: "Bootstrap", proficiency: "Proficient", experience: "", description: "Grid system, components, responsive utilities, customization" },
+        { name: "TypeScript", proficiency: "Beginner", experience: "", description: "Type safety, interfaces, basic type definitions and usage" },
       ]
     },
     {
@@ -42,25 +44,31 @@ const Skills = () => {
       color: "from-sky-400 to-blue-600",
       skills: [
         { name: "React Native", proficiency: "Advanced", experience: "1+ years", description: "Cross-platform mobile apps, native components, platform-specific code" },
+        { name: "React Native CLI", proficiency: "Proficient", experience: "1+ years", description: "Native builds, linking libraries, debugging, platform configurations" },
         { name: "Expo", proficiency: "Advanced", experience: "1+ years", description: "Rapid development workflow, managed services, deployment" },
+        { name: "Firebase", proficiency: "Proficient", experience: "1+ years", description: "Authentication, Firestore, Realtime Database, Cloud Storage, Push Notifications" },
         { name: "AsyncStorage", proficiency: "Proficient", experience: "1+ years", description: "Local data persistence, state management, offline functionality" },
-        { name: "Navigation", proficiency: "Proficient", experience: "1+ years", description: "React Navigation, stack/tab navigators, deep linking" },
-        { name: "API Integration", proficiency: "Advanced", experience: "1+ years", description: "Fetch API, axios, handling responses, error management" },
-        { name: "Mobile UI/UX", proficiency: "Proficient", experience: "1+ years", description: "Native design patterns, responsive layouts, touch interactions" },
+        { name: "React Navigation", proficiency: "Proficient", experience: "1+ years", description: "Stack, tab, drawer navigators, deep linking, navigation state" },
+        { name: "Android Studio", proficiency: "Intermediate", experience: "1+ years", description: "Android emulators, debugging, native module integration, APK builds" },
+        { name: "Mobile API Integration", proficiency: "Advanced", experience: "1+ years", description: "Fetch API, axios, handling responses, error management" },
       ]
     },
     {
       id: 3,
-      title: "Tools & Others",
+      title: "Tools & DevOps",
       icon: Shield,
       color: "from-gray-500 to-slate-600",
       skills: [
-        { name: "Git & GitHub", proficiency: "Advanced", experience: "2+ years", description: "Version control, branching strategies, collaboration workflows" },
+        { name: "Git & GitHub", proficiency: "Advanced", experience: "2+ years", description: "Version control, branching strategies, collaboration workflows, PR reviews" },
         { name: "VS Code", proficiency: "Expert", experience: "2+ years", description: "Advanced usage, extensions, debugging, productivity features" },
+        { name: "Vite", proficiency: "Advanced", experience: "1+ years", description: "Fast build tool, hot reload, optimization, modern bundling, dev server" },
+        { name: "Parcel", proficiency: "Intermediate", experience: "6 months", description: "Zero-config bundler, automatic transforms, code splitting" },
         { name: "Postman", proficiency: "Advanced", experience: "2+ years", description: "API testing, collections, environment variables, automation" },
-        { name: "npm/yarn", proficiency: "Advanced", experience: "2+ years", description: "Package management, scripts, dependency resolution" },
-        { name: "Vite", proficiency: "Proficient", experience: "1+ years", description: "Fast build tool, hot reload, optimization, modern bundling" },
-        { name: "Jest & Testing Library", proficiency: "Beginner", experience: "6 months", description: "Unit testing, component testing, test-driven development basics" },
+        { name: "npm/yarn", proficiency: "Advanced", experience: "2+ years", description: "Package management, scripts, dependency resolution, workspaces" },
+        { name: "Android Studio", proficiency: "Intermediate", experience: "1+ years", description: "Emulators, APK builds, debugging, native development basics" },
+        { name: "Chrome DevTools", proficiency: "Advanced", experience: "2+ years", description: "Debugging, performance profiling, network analysis, React DevTools" },
+        { name: "Firebase Console", proficiency: "Proficient", experience: "1+ years", description: "Project setup, authentication config, database management, analytics" },
+        { name: "Vercel", proficiency: "Proficient", experience: "1+ years", description: "Deployment, environment variables, preview deployments, domain setup" },
       ]
     },
     {
@@ -79,6 +87,7 @@ const Skills = () => {
     }
   ];
 
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -89,9 +98,11 @@ const Skills = () => {
       { threshold: 0.1 }
     );
 
+
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
+
 
   return (
     <section id="skills" ref={sectionRef} className="py-20 bg-black relative overflow-hidden">
@@ -100,6 +111,7 @@ const Skills = () => {
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-slate-500/5 rounded-full blur-3xl" />
       </div>
+
 
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Section Header */}
@@ -126,6 +138,7 @@ const Skills = () => {
             and continuous learning. From MERN stack to React Native development.
           </p>
         </div>
+
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Category Navigation */}
@@ -164,6 +177,7 @@ const Skills = () => {
             </div>
           </div>
 
+
           {/* Skills Display */}
           <div className={`lg:col-span-2 transition-all duration-1000 delay-400 ${
             isVisible ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
@@ -186,6 +200,7 @@ const Skills = () => {
                     </div>
                   </div>
 
+
                   <div className="space-y-6">
                     {skillCategories[selectedCategory].skills.map((skill, idx) => (
                       <div
@@ -201,9 +216,6 @@ const Skills = () => {
                               <h4 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors duration-300">
                                 {skill.name}
                               </h4>
-                              <span className="text-xs text-gray-500 font-mono bg-gray-800/50 px-2 py-1 rounded">
-                                {skill.experience}
-                              </span>
                             </div>
                             <p className="text-sm text-gray-400 leading-relaxed">
                               {skill.description}
@@ -216,6 +228,7 @@ const Skills = () => {
                 </div>
               );
             })()}
+
 
             {/* Learning Path */}
             <div className={`mt-8 transition-all duration-1000 delay-1000 ${
@@ -248,5 +261,6 @@ const Skills = () => {
     </section>
   );
 };
+
 
 export default Skills;
