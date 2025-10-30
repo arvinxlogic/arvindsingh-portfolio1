@@ -3,7 +3,7 @@ import { Github, ExternalLink, Code, Database, Globe, Smartphone, Chrome, Award,
 
 // Import all project images - UPDATED with new web project images
 import devconnectImg from '../../assets/Images/devconnect.png';
-import devCollabImg from '../../assets/Images/dev collab.png';
+import devCollabImg from '../../assets/Images/dev-collab.png';
 import spotifyImg from '../../assets/Images/Spotify.png';
 import wiseImg from '../../assets/Images/wise.png';
 import preplockImg from '../../assets/Images/preplock.png';
