@@ -99,7 +99,7 @@ function App() {
               </div>
               
               <div className="text-gray-400 text-center md:text-right">
-                <p className="mb-2">&copy; {new Date().getFullYear()} Arvind Kumar. Crafted with precision.</p>
+                <p className="mb-2">&copy; {new Date().getFullYear()} Arvind Singh Crafted with precision.</p>
                 <p className="text-sm">Built with React, Tailwind CSS & passion</p>
               </div>
             </div>

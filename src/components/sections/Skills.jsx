@@ -201,47 +201,14 @@ const Skills = () => {
                               <h4 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors duration-300">
                                 {skill.name}
                               </h4>
-                              <div className="flex items-center space-x-2">
-                                <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                                  skill.proficiency === 'Expert' 
-                                    ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-                                    : skill.proficiency === 'Advanced'
-                                    ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
-                                    : skill.proficiency === 'Proficient'
-                                    ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30'
-                                    : skill.proficiency === 'Intermediate'
-                                    ? 'bg-sky-500/20 text-sky-400 border border-sky-500/30'
-                                    : 'bg-slate-500/20 text-slate-400 border border-slate-500/30'
-                                }`}>
-                                  {skill.proficiency}
-                                </span>
-                                <span className="text-xs text-gray-500 font-mono bg-gray-800/50 px-2 py-1 rounded">
-                                  {skill.experience}
-                                </span>
-                              </div>
+                              <span className="text-xs text-gray-500 font-mono bg-gray-800/50 px-2 py-1 rounded">
+                                {skill.experience}
+                              </span>
                             </div>
                             <p className="text-sm text-gray-400 leading-relaxed">
                               {skill.description}
                             </p>
                           </div>
-                        </div>
-                        
-                        {/* Skill Strength Indicator */}
-                        <div className="flex space-x-1 mt-4">
-                          {[...Array(5)].map((_, i) => (
-                            <div
-                              key={i}
-                              className={`h-1 flex-1 rounded-full transition-all duration-300 ${
-                                i < (skill.proficiency === 'Expert' ? 5 : 
-                                     skill.proficiency === 'Advanced' ? 4 : 
-                                     skill.proficiency === 'Proficient' ? 3 :
-                                     skill.proficiency === 'Intermediate' ? 2 : 1)
-                                  ? `bg-gradient-to-r ${skillCategories[selectedCategory].color}`
-                                  : 'bg-gray-700'
-                              }`}
-                              style={{ transitionDelay: `${800 + idx * 100 + i * 50}ms` }}
-                            />
-                          ))}
                         </div>
                       </div>
                     ))}

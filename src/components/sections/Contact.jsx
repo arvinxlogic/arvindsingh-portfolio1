@@ -17,17 +17,17 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      info: "arvindsingh05@gmail.com",
+      info: "arvindsinghxz@gmail.com",
       subtitle: "Best way to reach me",
-      action: "mailto:arvindsingh05@gmail.com",
+      action: "mailto:arvindsinghxz@gmail.com",
       color: "from-blue-400 to-cyan-400"
     },
     {
       icon: Github,
       title: "GitHub",
-      info: "@arvindsingh2213",
+      info: "@arvinxlogic",
       subtitle: "Check out my repositories",
-      action: "https://github.com/arvindsingh2213",
+      action: "https://github.com/arvinxlogic",
       color: "from-gray-400 to-slate-500"
     },
     {
@@ -68,18 +68,9 @@ const Contact = () => {
     
     // Create mailto link with form data
     const subject = encodeURIComponent(formData.subject || "Portfolio Contact");
-    const body = encodeURIComponent(`Hi Arvind,
-
-Name: ${formData.name}
-Email: ${formData.email}
-
-Message:
-${formData.message}
-
-Best regards,
-${formData.name}`);
+    const body = encodeURIComponent(`Hi Arvind,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}\n\nBest regards,\n${formData.name}`);
     
-    const mailtoUrl = `mailto:arvindsingh05@gmail.com?subject=${subject}&body=${body}`;
+    const mailtoUrl = `mailto:arvindsinghxz@gmail.com?subject=${subject}&body=${body}`;
     
     // Open default email client
     window.location.href = mailtoUrl;
@@ -324,14 +315,16 @@ ${formData.name}`);
             }`}>
               <p className="text-gray-400 mb-4">Ready to build something amazing together?</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+  href="/resume.pdf"  // This will point to public/resume.pdf
+  download="Arvind_Singh_Resume.pdf"  // Suggested filename for download
+  className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300"
+>
+  <span>Download Resume</span>
+</a>
+
                 <a
-                  href="/resume.pdf"
-                  className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300"
-                >
-                  <span>Download Resume</span>
-                </a>
-                <a
-                  href="https://github.com/arvindsingh2213"
+                  href="https://github.com/arvinxlogic"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center space-x-2 px-6 py-3 border-2 border-blue-500 text-blue-400 rounded-full font-semibold hover:bg-blue-500/10 hover:scale-105 transition-all duration-300"
