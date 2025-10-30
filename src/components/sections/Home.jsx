@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { ChevronDown, Github, Linkedin, Mail, ArrowRight, MousePointer } from "lucide-react";
+// Import profile photo from assets
+import profilePhoto from '../../assets/Images/arvind-photo.jpg';
 
 const Home = () => {
   const [currentRole, setCurrentRole] = useState(0);
@@ -74,6 +76,25 @@ const Home = () => {
           </p>
         </div>
 
+        {/* Profile Photo */}
+        <div className={`transition-all duration-700 delay-300 mb-8 ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+        }`}>
+          <div className="relative inline-block">
+            <div className="relative w-40 h-40 md:w-48 md:h-48 mx-auto">
+              <img 
+                src={profilePhoto}
+                alt="Arvind Singh"
+                className="w-full h-full object-cover rounded-full border-4 border-gray-800"
+              />
+              {/* Glow effect */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/30 to-cyan-500/30 blur-xl -z-10"></div>
+              {/* Animated ring */}
+              <div className="absolute inset-0 rounded-full border-2 border-blue-400/50 animate-pulse"></div>
+            </div>
+          </div>
+        </div>
+
         {/* Name */}
         <div className={`transition-all duration-700 delay-400 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
@@ -138,13 +159,12 @@ const Home = () => {
             </span>
           </button>
           <a
-  href="/resume.pdf"  // This will point to public/resume.pdf
-  download="Arvind_Singh_Resume.pdf"  // Suggested filename for download
-  className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300"
->
-  <span>Download Resume</span>
-</a>
-
+            href="/resume.pdf"
+            download="Arvind_Singh_Resume.pdf"
+            className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300"
+          >
+            <span>Download Resume</span>
+          </a>
         </div>
 
         {/* Social Links */}
